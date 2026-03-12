@@ -1,0 +1,1544 @@
+/* css irene mapa */
+/* MAPA ESTILO AIRBNB */
+/* searchbar mapa */
+:root {
+  --primary-color: #5c73f2;
+  --secondary-color: #91bbf2;
+  --accent-pink: #f24171;
+  --text-dark: #111111;
+}
+
+.search-bar-map {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  position: relative;
+  z-index: 100;
+}
+
+.map-view-container {
+  display: flex;
+  border-radius: 10%;
+  height: calc(100vh - 90px);
+  background-color: #fff;
+}
+
+.map-list-section {
+  width: 50%;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.map-section {
+  width: 50%;
+  height: 100%;
+}
+
+/* MARCADORES DEL MAPA */
+.marker-nube {
+  background: white;
+  padding: 8px 14px;
+  border-radius: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--text-dark);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.marker-nube:hover {
+  transform: scale(1.05);
+  z-index: 100 !important;
+}
+
+/* TARJETAS DE LA LISTA */
+.airbnb-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.airbnb-grid-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.airbnb-grid-card:hover .img-container img {
+  transform: scale(1.05);
+}
+
+.airbnb-grid-card .img-container {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.airbnb-grid-card .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .airbnb-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* POPUP DEL MAPA (INFO WINDOW) */
+.gm-style-iw-c {
+  padding: 0 !important;
+  border-radius: 16px !important;
+  max-width: 260px !important;
+  overflow: hidden !important;
+}
+
+.gm-style-iw-d {
+  overflow: hidden !important;
+  padding: 0 !important;
+  max-height: none !important;
+}
+
+.gm-style-iw-chr {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+  z-index: 10;
+  background: transparent !important;
+}
+
+/* BOTÓN CERRAR CON FONDO SEMITRANSPARENTE */
+.gm-ui-hover-effect {
+  top: 8px !important;
+  right: 8px !important;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  ) !important; /* Blanco con 60% opacidad */
+  border-radius: 50% !important;
+  width: 28px !important;
+  height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  opacity: 1 !important;
+  border: none !important;
+}
+
+/* OCULTAR ICONOS ORIGINALES DE GOOGLE */
+.gm-ui-hover-effect img,
+.gm-ui-hover-effect span,
+.gm-ui-hover-effect svg {
+  display: none !important;
+}
+
+/* DIBUJO MANUAL DE LA X */
+.gm-ui-hover-effect::before,
+.gm-ui-hover-effect::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 10px !important;
+  height: 2px !important;
+  background-color: #00000072 !important;
+}
+
+.gm-ui-hover-effect::before {
+  transform: rotate(45deg) !important;
+}
+
+.gm-ui-hover-effect::after {
+  transform: rotate(-45deg) !important;
+}
+
+/* CONTENIDO PERSONALIZADO */
+.custom-info-window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.custom-info-window img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  margin: 0 !important;
+}
+
+.custom-info-window .info-text {
+  padding: 12px 16px;
+  background: white;
+}
+
+.custom-info-window h6 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  color: #222;
+  font-weight: 600;
+}
+
+.custom-info-window p {
+  margin: 0;
+  color: #222;
+  font-weight: 800;
+  font-size: 16px;
+}
+/* fin css SOLO MAPA */
+
+/* INICIO css para la pagina SEARCH HOME */
+
+.tns-carousel-manual {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 5px;
+  scrollbar-width: none;
+}
+
+.tns-carousel-manual::-webkit-scrollbar {
+  display: none;
+}
+
+.tns-manual-item {
+  flex: 0 0 350px;
+  max-width: 350px;
+}
+
+.tns-custom-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tns-custom-btn:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.tns-custom-btn.prev {
+  left: -20px;
+}
+.tns-custom-btn.next {
+  right: -20px;
+}
+
+.storage-card-elevated {
+  border: 1px solid #eee !important;
+}
+
+.btn-outline-primary {
+  transition: transform 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+  transform: scale(1.1);
+  background-color: var(--primary-color);
+}
+/* FINALcss para la pagina search home */
+
+/* inicio css HOME por irene */
+html {
+  scroll-behavior: smooth;
+}
+
+.highlight-container {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-svg path {
+  fill: var(--secondary-color);
+}
+.underline-svg {
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.highlight-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* marcador para el mapa SOLO MAPA */
+.marker-nube {
+  background: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* HOME */
+.hero-section {
+  padding: 0 5% !important;
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* badge transparente */
+.support-badge {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  padding: 12px 20px !important;
+  top: 30px !important;
+  right: 30px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* buscador */
+.altura {
+  margin-top: -130px;
+  max-width: 1100px;
+  z-index: 100;
+  position: relative;
+}
+
+.search-bar-container {
+  margin-top: -170px;
+  max-width: 1100px;
+  z-index: 100;
+  position: relative;
+}
+
+.search-bar-inner {
+  border-radius: 100px !important;
+  padding: 8px 12px !important;
+  background: white;
+}
+
+.search-field {
+  padding: 0 20px !important;
+}
+
+.search-field label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #999;
+  margin-bottom: -2px;
+}
+
+.search-field input {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.search-btn {
+  width: 48px !important;
+  height: 48px !important;
+  background-color: var(--primary-color) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  color: white !important;
+  transition: transform 0.2s ease;
+}
+
+.search-btn:hover {
+  transform: scale(1.1);
+  background-color: var(--accent-pink) !important;
+}
+/* EFECTO DE TEXTO DINÁMICO */
+
+.dynamic-text-container {
+  display: inline-flex;
+  perspective: 1000px;
+  margin-left: 10px;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+.content-side {
+  padding-right: 10% !important;
+}
+
+.search-bar-container {
+  margin-bottom: 100px;
+}
+
+.dynamic-text {
+  color: var(--accent-pink);
+  display: inline-block;
+  font-weight: 800;
+  animation: flipDown 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+  transform-origin: top;
+}
+
+@keyframes flipDown {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+/* título sobre los storages */
+.secondary-hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* cards ultimas circulares de storages dentro de home */
+.nearby-card {
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border: none !important;
+  background: transparent !important;
+}
+
+.nearby-card:hover {
+  transform: translateY(-5px);
+}
+
+.nearby-img-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nearby-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nearby-title {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+  color: #000;
+}
+
+.nearby-subtitle {
+  font-size: 0.85rem;
+  color: #666;
+}
+/* seccion ultima home de reserva */
+.reserve-banner-video {
+  border-radius: 40px;
+  min-height: 450px;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.reserve-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.reserve-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  text-align: center;
+}
+
+.reserve-content-overlay h2 {
+  font-weight: 400;
+  font-size: 3.5rem;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.reserve-content-overlay p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  font-weight: 500;
+  margin-bottom: 40px !important;
+}
+
+.btn-glass-custom {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(5px);
+  color: white !important;
+  border: 2px solid white !important;
+  padding: 18px 45px !important;
+  border-radius: 50px !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+}
+
+.btn-glass-custom:hover {
+  background: var(--acce-color) !important;
+  border-color: var(--secondary-color) !important;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px var(--primary-color);
+}
+/* FIN HOME */
+
+/* cards de location*/
+.location-card {
+  border-radius: 25px !important;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: none !important;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+.location-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-img-wrapper {
+  width: 100%;
+  aspect-ratio: 9 / 9;
+  overflow: hidden;
+  position: relative;
+}
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.location-card:hover .card-img-wrapper img {
+  transform: scale(1.1);
+}
+
+.location-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  color: white !important;
+}
+
+.btn-primary-custom {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(92, 115, 242, 0.3);
+}
+
+.btn-primary-custom:hover {
+  background-color: #455bc4 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(92, 115, 242, 0.4);
+}
+
+/* fin css HOME por irene */
+
+/* INICIO NAVBAR SERGIO */
+
+/* boton de anfitrión del navbar */
+.anfitrion-btn {
+  background-color: #f2f2f2;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+.anfitrion-btn:hover {
+  background-color: #e0e0e0;
+  color: #000;
+  transform: translateY(-1px);
+}
+
+/* Inicio Navbar de Sergio */
+
+/* flechas del navbar */
+
+/* Quitamos flecha default */
+.navbar .dropdown-toggle::after {
+  display: none;
+}
+
+/* Aplicamos padding correcto a TODOS los toggles */
+.navbar .nav-link.dropdown-toggle,
+.navbar .btn.dropdown-toggle {
+  padding-right: 24px !important;
+}
+
+/* Flecha personalizada */
+.navbar .dropdown-toggle::before {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 3px solid #5c73f2;
+  border-bottom: 3px solid #5c73f2;
+  transform: translateY(-50%) rotate(45deg);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Elimina cualquier marcador extraño en navbar */
+.navbar .nav-item::before,
+.navbar .nav-item::after,
+.navbar .nav-item::marker {
+  content: none !important;
+  display: none !important;
+}
+
+.navbar .navbar-nav {
+  list-style: none !important;
+}
+
+/* Cuando está abierto */
+.navbar .dropdown-toggle.show::before {
+  transform: translateY(-50%) rotate(-135deg);
+  border-color: #91bbf2;
+}
+
+/* animaciones del navbar */
+
+/* Animación suave general */
+.navbar .nav-link,
+.navbar .nav-toggle-btn {
+  transition: all 0.2s ease;
+}
+
+/* Efecto hover */
+.navbar .nav-link:hover,
+.navbar .nav-toggle-btn:hover {
+  color: #5c73f2 !important;
+  transform: translateY(-1px);
+}
+
+/* Iconos */
+.nav-icon {
+  font-size: 0.9rem;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Icono crece al hover */
+.navbar .nav-link:hover .nav-icon,
+.navbar .nav-toggle-btn:hover .nav-icon {
+  transform: scale(1.15);
+  color: #5c73f2;
+}
+
+/* Cuando dropdown está abierto */
+.navbar .dropdown-toggle.show {
+  color: #5c73f2 !important;
+}
+
+/* CENTRAR LOGIN Y SERVICES ABSOLUTO */
+.center-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.navbar .nav-link {
+  color: #333;
+  transition: all 0.25s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #5c73f2 !important;
+  transform: translateY(-1px);
+}
+
+/* CENTRAR LOGIN Y SERVICES ABSOLUTO */
+/* Links centrales más grandes */
+.center-link {
+  font-size: 1.1rem;
+  color: #333 !important;
+  transition: all 0.2s ease;
+}
+
+/* Hover elegante Airbnb */
+.center-link:hover {
+  color: #5c73f2 !important;
+  transform: scale(1.05);
+}
+
+/* Botón host */
+.anfitrion-btn {
+  background-color: lightgray;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.anfitrion-btn:hover {
+  background-color: #4a5fd1;
+  transform: scale(1.05);
+}
+
+/* Botón hamburguesa */
+.menu-btn {
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.menu-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== MICRO BOUNCE ICONOS ===== */
+
+.nav-icon {
+  transition: color 0.2s ease;
+}
+
+/* Hover activa bounce */
+.navbar .nav-link:hover .nav-icon,
+.navbar .dropdown-item:hover .nav-icon,
+.navbar .menu-btn:hover .nav-icon {
+  animation: microBounce 0.45s ease;
+  color: #5c73f2;
+}
+
+/* ===== NAV LINKS PREMIUM (About & Features) ===== */
+
+.custom-nav-link {
+  position: relative;
+  font-weight: 600;
+  color: #333 !important;
+  padding: 8px 4px;
+  transition: all 0.25s ease;
+}
+
+/* Línea animada elegante */
+.custom-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #5c73f2;
+  transition: width 0.3s ease;
+}
+
+/* Hover */
+.custom-nav-link:hover {
+  color: #5c73f2 !important;
+  transform: translateY(-2px);
+}
+
+.custom-nav-link:hover::after {
+  width: 100%;
+}
+
+/* Animación suave tipo "vida" */
+@keyframes microBounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  65% {
+    transform: translateY(1px);
+  }
+  85% {
+    transform: translateY(-1px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.password-eye {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translate(-50%);
+  cursor: pointer;
+  color: #91bbf2;
+  transition: all 0.25s ease;
+}
+
+.password-eye:hover {
+  transform: translateY(-50%) scale(1.15);
+  color: #5c73f2;
+}
+
+.password-eye:active {
+  transform: translate(-50%) scale(0.95);
+}
+
+.password-eye {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #91bbf2;
+  transition: all 0.25s ease;
+}
+
+.password-eye:hover {
+  transform: translateY(-50%) scale(1.15);
+  color: #5c73f2;
+}
+
+/* Login principal */
+.login-btn {
+  background-color: #5c73f2;
+  color: white;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.login-btn:hover {
+  background-color: #4a5fe0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(92, 115, 242, 0.25);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(92, 115, 242, 0.2);
+}
+
+/* Botones sociales */
+.social-btn {
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  background-color: #f9faff;
+}
+
+.social-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* FIN NAVBAR SERGIO */
+/* ===== NAVBAR RIGHT PREMIUM STYLE ===== */
+
+.navbar-right {
+  margin-left: auto;
+}
+
+/* estilo base */
+.nav-pill {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* iconos */
+.nav-pill i {
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+/* hover elegante */
+.nav-pill:hover {
+  background-color: rgba(92, 115, 242, 0.08);
+  color: #5c73f2;
+  transform: translateY(-2px);
+}
+
+/* iconito animado */
+.nav-pill:hover i {
+  transform: scale(1.15);
+}
+
+/* activo tipo Hotel */
+.active-pill {
+  background-color: rgba(92, 115, 242, 0.15);
+  color: #5c73f2;
+}
+
+.nav-pill {
+  white-space: nowrap;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px; /* más aire */
+  white-space: nowrap;
+}
+
+.nav-main-link {
+  position: relative;
+  color: #333 !important;
+  transition: all 0.25s ease;
+  padding: 8px 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* Hover */
+.nav-main-link:hover {
+  color: #5c73f2 !important;
+  transform: translateY(-1px);
+}
+
+/* Iconos animados */
+.nav-main-link i {
+  transition: transform 0.25s ease;
+}
+
+.nav-main-link:hover i {
+  transform: translateY(-3px);
+}
+
+/* NAVBAR SIEMPRE POR ENCIMA */
+header,
+.navbar {
+  position: sticky;
+  top:0;
+  z-index: 1100;
+  background-color: white;
+  height: fit-content;
+  padding:1px 0 1px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.047);
+}
+
+/* Dropdown aún más arriba */
+.dropdown-menu {
+  z-index: 1200 !important;
+}
+
+.company-link .nav-link {
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Subrayado elegante animado */
+.company-link .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 0%;
+  height: 2px;
+  transition: width 0.3s ease;
+}
+
+.company-link .nav-link:hover::after {
+  width: 100%;
+}
+
+/* FIN NAVBAR SERGIO */
+
+/* INICIO ABOUT US SERGIO */
+
+.team-card {
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(92, 115, 242, 0.08),
+    rgba(0, 0, 0, 0.03)
+  );
+  z-index: 0;
+}
+
+.team-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text-box {
+  background: #91bbf2;
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-text-box:hover {
+  background: #5c73f2;
+}
+
+.social-icon {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.2);
+  color: #5c73f2;
+  text-shadow: 0 8px 20px rgba(92, 115, 242, 0.6);
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SECTION TITLE */
+.section-heading {
+  font-size: 2.2rem;
+  line-height: 1.3;
+}
+
+/* IMAGE SECTION */
+.image-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.image-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.small-img {
+  width: 50%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* LEARN CARDS */
+.learn-card {
+  text-align: left;
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: #eef1ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  color: #2b4eff;
+}
+
+.learn-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.learn-icon {
+  min-width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #6c63ff, #4e9af1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+}
+
+.learn-content h5 {
+  margin-bottom: 8px;
+}
+
+.learn-content p {
+  margin: 0;
+  color: #555;
+}
+
+.learn-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.learn-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.learn-icon {
+  min-width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #6c63ff, #4e9af1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.learn-content {
+  flex: 1;
+}
+
+.learn-content h5 {
+  margin-bottom: 8px;
+}
+
+.learn-content p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.col-lg-7 {
+  padding-left: 50px;
+}
+
+.primary-image img {
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.image-grid {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.small-img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* FIN ABOUT US SERGIO */
+
+/* INICIO FEATURES SERGIO */
+
+.features-bg {
+  background: linear-gradient(white);
+}
+
+/* HERO */
+.hero {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.hero-title {
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  max-width: 850px;
+  margin: auto;
+  opacity: 0.85;
+}
+
+/* TITLES */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.section-text {
+  max-width: 900px;
+  margin: auto;
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+/* TECH STACK */
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.tech-stack span {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.tech-stack span:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+/* CARDS */
+.feature-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* DIVIDER */
+.section-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 60px auto;
+  width: 80%;
+}
+
+/* FADE ANIMATION */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.backend-card {
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s;
+}
+
+.backend-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.backend-card:hover .backend-img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.backend-card:hover .backend-list li {
+  transform: translateX(5px);
+  transition: transform 0.3s;
+}
+
+.frontend-card {
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s;
+}
+
+.frontend-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.frontend-card:hover .frontend-img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.frontend-card:hover .frontend-list li {
+  transform: translateX(5px);
+  transition: transform 0.3s;
+}
+/* FIN FEATURES SERGIO */
+
+
+/* INICIO BOTONES LOCATIONS ADMIN SERGIO */
+
+/* HEADER */
+.header-primary {
+  background-color: #9BBBF2;
+  color: black;
+}
+
+/* BOTÓN SECUNDARIO (exterior) */
+.btn-secondary-custom {
+  background-color: #9BBBF2;
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-custom:hover {
+  background-color: #5C73F2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(92, 115, 242, 0.4);
+}
+
+/* BOTÓN TERCIARIO (acciones internas) */
+.btn-tertiary-custom {
+  background-color: #6695F2;
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-tertiary-custom:hover {
+  background-color: #ffffff00;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(242, 65, 113, 0.4);
+}
+
+/* Progress bar personalizada */
+.progress-bar-custom {
+  background-color: #5C73F2;
+}
+
+/* BOTÓN OUTLINE SECUNDARIO (eye & edit) */
+.btn-outline-secondary-custom {
+  background-color: transparent;
+  color: #9BBBF2;
+  border: 2px solid #9BBBF2;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary-custom:hover {
+  background-color: #9BBBF2;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(155, 187, 242, 0.4);
+}
+
+/* BADGE CIUDAD GRANDE */
+.badge-city {
+  background-color: #5C73F2;
+  color: white;
+  font-size: 1rem;        /* mismo tamaño visual que h5 */
+  padding: 0.3rem 0.3rem;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(92, 115, 242, 0.3);
+}
+
+/* BOTÓN BACK PERSONALIZADO */
+.btn-back-custom {
+  background-color: transparent;
+  color: #5C73F2;
+  border: 2px solid #5C73F2;
+  transition: all 0.3s ease;
+}
+
+.btn-back-custom:hover {
+  background-color: #5C73F2;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(92, 115, 242, 0.4);
+}
+
+/* BOTÓN EDIT HEADER */
+.btn-edit-header {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #5C73F2;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-edit-header:hover {
+  background-color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.company-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* INFO BLOCK MEJORADO */
+.info-block {
+  background-color: #eef1ff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  border-left: 5px solid #5C73F2;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.info-block:hover {
+  background-color: #e0e6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(92, 115, 242, 0.15);
+}
+
+/* Iconos */
+.info-icon {
+  font-size: 0.95rem;      
+  color: #5C73F2;
+  margin-top: 4px;        
+  transition: all 0.3s ease;
+}
+
+.info-block:hover .info-icon {
+  transform: scale(1.1);
+}
+
+/* HEADER */
+.header-primary {
+  background-color: #5C73F2;
+  color: white;
+  text-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+}
+
+/* INPUTS */
+.input-custom {
+  border: 1px solid #9BBBF2;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.input-custom:focus {
+  border-color: #5C73F2;
+  box-shadow: 0 0 8px rgba(92,115,242,0.3);
+}
+
+/* BOTONES */
+.btn-secondary-custom {
+  background-color: #9BBBF2;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-custom:hover {
+  background-color: #5C73F2;
+  color: #fff;
+}
+
+.btn-third-custom {
+  background-color: #F24171;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-third-custom:hover {
+  background-color: #d0305b;
+}
+
+/* IMG */
+.rounded-3 {
+  border-radius: 1rem !important;
+}
+
+/* HEADER */
+.header-primary {
+  background-color: #5C73F2;
+  color: white;
+  text-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+}
+
+/* INFO BLOCKS */
+.info-block {
+  background-color: #f0f4ff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.info-block:hover {
+  background-color: #d9e2ff;
+}
+
+/* ICONS */
+.icon {
+  font-size: 1.2rem;
+  color: #5C73F2;
+  transition: transform 0.3s ease;
+}
+
+.info-block:hover .icon {
+  transform: scale(1.2);
+}
+
+/* BOTONES */
+.btn-secondary-custom {
+  background-color: #9BBBF2;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-custom:hover {
+  background-color: #5C73F2;
+  color: #fff;
+}
+
+/* FIN BOTONES LOCATIONS ADMIN SERGIO */

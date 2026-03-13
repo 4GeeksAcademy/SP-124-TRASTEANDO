@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo_trasteando_transparente.png" width="220">
+  <img src="docs/logo.png" width="220">
 </p>
 
 <h1 align="center">
@@ -17,7 +17,7 @@ Alquila · Gestiona · Paga · Todo online
 ---
 
 <p align="center">
-  <img src="trasteando_1200x600.png">
+  <img src="docs/banner.png">
 </p>
 
 ---

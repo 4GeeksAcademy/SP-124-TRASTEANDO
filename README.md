@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="docs/logo.png" width="220">
-</p>
-
 <h1 align="center">
 Trasteando
 </h1>
@@ -17,7 +13,7 @@ Alquila · Gestiona · Paga · Todo online
 ---
 
 <p align="center">
-  <img src="docs/banner.png">
+  <img src="docs/banner_1600.png">
 </p>
 
 ---
@@ -82,62 +78,92 @@ PostgreSQL
 Servicios integrados
 
 
-Stripe → pagos
-Socket.IO → mensajería en tiempo real
-JWT → autenticación segura
+-  Stripe → pagos
+-  Socket.IO → mensajería en tiempo real
+-  JWT → autenticación segura
+-  Google Mpas → Geolocalización
+-  AI Inteligence → Inventario inteligente
 
 
 ---
 
 # 📦 Instalación local
 
-## Backend
+Para ejecutar Trasteando en entorno local necesitas tener instalado:
 
-Instalar dependencias
-pipenv install
+Python 3.10+
 
-Crear variables de entorno
-cp .env.example .env
+Node.js 20+
 
-Ejemplo DATABASE_URL
+PostgreSQL
 
-postgres://username:password@localhost:5432/trasteando
+Pipenv
 
-Migraciones
-pipenv run migrate
-pipenv run upgrade
 
-Arrancar servidor
-pipenv run start_socket
+Backend setup
 
-Frontend
+1️⃣ Instalar dependencias
 
-Instalar dependencias
-npm install
+  - pipenv install
+  
+2️⃣ Crear variables de entorno
 
-Arrancar entorno
-npm run start
+  - cp .env.example .env
 
-🔑 Funcionalidades
+Ejemplo de configuración:
 
-✔ Gestión de trasteros
-✔ Gestión de contratos
-✔ Dashboard de usuario
-✔ Pagos con Stripe
-✔ Mensajería en tiempo real
-✔ API segura con JWT
+DATABASE_URL=postgres://username:password@localhost:5432/trasteando
+SECRET_KEY=your_secret_key
 
-👨‍💻 Equipo
+3️⃣ Ejecutar migraciones de base de datos
 
-Proyecto desarrollado en 4Geeks Academy Full Stack Bootcamp
+ -  pipenv run migrate
+ -  pipenv run upgrade
 
-Equipo:
+4️⃣ Iniciar servidor backend
 
-Irene Sánchez
+ -  pipenv run start_socket
 
-Sergio Córdoba
+El backend se ejecutará en:
 
-David Álvarez
+http://localhost:3001
+
+Frontend setup
+
+1️⃣ Instalar dependencias
+
+ - npm install
+
+2️⃣ Iniciar entorno de desarrollo
+
+ - npm run start
+
+La aplicación estará disponible en:
+
+http://localhost:3000
+🔑 Funcionalidades principales
+
+Trasteando incluye:
+
+📦 Gestión de trasteros
+
+📑 Gestión de contratos
+
+👤 Dashboard de usuario
+
+💳 Sistema de pagos con Stripe
+
+💬 Mensajería en tiempo real (Socket.IO)
+
+🔐 Autenticación segura con JWT
+
+🗄 Persistencia de datos con PostgreSQL
+
+
+
+<h1 align="center">Proyecto desarrollado durante el Full Stack Developer Bootcamp de 4Geeks Academy.</h1>
+
+<img src="https://ishan-rest.vercel.app/svg/banner/dev/Irene-Sergio-David" alt="banner" width="100%"/>
 
 
 ---

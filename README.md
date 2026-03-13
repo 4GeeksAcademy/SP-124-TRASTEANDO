@@ -1,81 +1,143 @@
-# WebApp boilerplate with React JS and Flask API
+<p align="center">
+  <img src="logo_trasteando_transparente.png" width="220">
+</p>
 
-Build web applications using React.js for the front end and python/flask for your backend API.
+<h1 align="center">
+Trasteando
+</h1>
 
-- Documentation can be found here: https://4geeks.com/docs/start/react-flask-template
-- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
-- Integrated with Pipenv for package managing.
-- Fast deployment to Render [in just a few steps here](https://4geeks.com/docs/start/deploy-to-render-com).
-- Use of .env file.
-- SQLAlchemy integration for database abstraction.
+<p align="center">
+Gestión inteligente de trasteros y espacios de almacenamiento
+</p>
 
-### 1) Installation:
+<p align="center">
+Alquila · Gestiona · Paga · Todo online
+</p>
 
-> If you use Github Codespaces (recommended) or Gitpod this template will already come with Python, Node and the Posgres Database installed. If you are working locally make sure to install Python 3.10, Node 
+---
 
-It is recomended to install the backend first, make sure you have Python 3.10, Pipenv and a database engine (Posgress recomended)
+<p align="center">
+  <img src="trasteando_1200x600.png">
+</p>
 
-1. Install the python packages: `$ pipenv install`
-2. Create a .env file based on the .env.example: `$ cp .env.example .env`
-3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
+---
 
-| Engine    | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgress | postgres://username:password@localhost:5432/example |
+# 🚀 Demo
 
-4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-5. Run the migrations: `$ pipenv run upgrade`
-6. Run the application: `$ pipenv run start`
+https://trasteando.onrender.com
 
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
+---
 
-### Undo a migration
+# ⚙️ Tech Stack
 
-You are also able to undo a migration by running
+<p align="center">
 
-```sh
-$ pipenv run downgrade
-```
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
 
-### Backend Populate Table Users
+<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
 
-To insert test users in the database execute the following command:
+<img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
 
-```sh
-$ flask insert-test-users 5
-```
+<img src="https://img.shields.io/badge/Socket.IO-black?style=for-the-badge&logo=socket.io&logoColor=white"/>
 
-And you will see the following message:
+<img src="https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white"/>
 
-```
-  Creating test users
-  test_user1@test.com created.
-  test_user2@test.com created.
-  test_user3@test.com created.
-  test_user4@test.com created.
-  test_user5@test.com created.
-  Users created successfully!
-```
+</p>
 
-### **Important note for the database and the data inside it**
+---
 
-Every Github codespace environment will have **its own database**, so if you're working with more people eveyone will have a different database and different records inside it. This data **will be lost**, so don't spend too much time manually creating records for testing, instead, you can automate adding records to your database by editing ```commands.py``` file inside ```/src/api``` folder. Edit line 32 function ```insert_test_data``` to insert the data according to your model (use the function ```insert_test_users``` above as an example). Then, all you need to do is run ```pipenv run insert-test-data```.
+# 🧠 ¿Qué es Trasteando?
 
-### Front-End Manual Installation:
+**Trasteando** es una plataforma web que permite gestionar **trasteros y espacios de almacenamiento** de forma sencilla y digital.
 
--   Make sure you are using node version 20 and that you have already successfully installed and runned the backend.
+Permite:
 
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
+- alquilar unidades de almacenamiento
+- gestionar contratos
+- controlar ubicaciones
+- gestionar pagos
+- comunicación en tiempo real
 
-## Publish your website!
+Todo desde un **dashboard web centralizado**.
 
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://4geeks.com/docs/start/deploy-to-render-com).
+---
 
-### Contributors
+# 🏗 Arquitectura
 
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
 
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+Frontend
+React
+│
+│ REST API
+▼
+Backend
+Flask API
+│
+│ ORM
+▼
+Database
+PostgreSQL
+
+
+Servicios integrados
+
+
+Stripe → pagos
+Socket.IO → mensajería en tiempo real
+JWT → autenticación segura
+
+
+---
+
+# 📦 Instalación local
+
+## Backend
+
+Instalar dependencias
+pipenv install
+
+Crear variables de entorno
+cp .env.example .env
+
+Ejemplo DATABASE_URL
+
+postgres://username:password@localhost:5432/trasteando
+
+Migraciones
+pipenv run migrate
+pipenv run upgrade
+
+Arrancar servidor
+pipenv run start_socket
+
+Frontend
+
+Instalar dependencias
+npm install
+
+Arrancar entorno
+npm run start
+
+🔑 Funcionalidades
+
+✔ Gestión de trasteros
+✔ Gestión de contratos
+✔ Dashboard de usuario
+✔ Pagos con Stripe
+✔ Mensajería en tiempo real
+✔ API segura con JWT
+
+👨‍💻 Equipo
+
+Proyecto desarrollado en 4Geeks Academy Full Stack Bootcamp
+
+Equipo:
+
+Irene Sánchez
+
+Sergio Córdoba
+
+David Álvarez
+
+
+---
